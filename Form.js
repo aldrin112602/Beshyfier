@@ -56,17 +56,17 @@ const Form = () => {
             readonly={true}
             id="output"
           ></textarea>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex gap-4 justify-content-between">
             <button
               onClick={copyTextBeshy}
               type="button"
-              class="mt-3 btn btn-primary"
+              class="mt-3 btn btn-primary btn-sm"
             >Copy mona beshy ko</button>
 
             <button
               onClick={resetBeshy}
               type="reset"
-              class="mt-3 btn btn-dark"
+              class="mt-3 btn btn-dark btn-sm"
             >Reset mo beshy ko</button>
           </div>
         </div>
