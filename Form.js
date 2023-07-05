@@ -1,5 +1,30 @@
 const Form = () => {
-    const handleSubmit = e => e.preventDefault(); 
+
+    const handleSubmit = e => e.preventDefault();
+
+
+    const handleChangeEvent = e => {
+        const output = e.target.value.trim().replace(/\s+/g, " 🤸 ") + " 😚❤️";
+        document.querySelector('#output').value = output;
+    }
+
+    const copyTextBeshy = () => {
+        const text = document.querySelector("#output");
+        text.value.length > 0 && (() => {
+            text.select();
+            document.execCommand("copy");
+
+            Swal.fire(
+              "Congratulations!",
+              "Coppied 🤸 successfully 🤸 beshy 🤸 ko.",
+              "success"
+            );
+        })();
+        
+    }
+
+
+
     return (
       <form class="text-start" onSubmit={handleSubmit}>
         <div class="form-group">
@@ -7,8 +32,8 @@ const Form = () => {
           <input
             type="text"
             class="form-control form-control-md form-control-lg"
-            placeholder="Bored lang ang beshy ko?"
             required={true}
+            onInput={handleChangeEvent}
           ></input>
         </div>
 
@@ -20,8 +45,13 @@ const Form = () => {
             placeholder=""
             required={true}
             readonly={true}
+            id="output"
           ></textarea>
-          
+          <button
+            onClick={copyTextBeshy}
+            type="button"
+            class="mt-3 btn btn-primary"
+          >Copy mona beshy ko</button>
         </div>
       </form>
     );
