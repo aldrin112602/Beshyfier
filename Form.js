@@ -22,6 +22,15 @@ const Form = () => {
         })();
         
     }
+    
+
+    const resetBeshy = () => {
+          Swal.fire(
+            "Success!",
+            "Reset 🤸 form 🤸 successfully 🤸 beshy 🤸 ko.",
+            "success"
+          );
+    };
 
 
 
@@ -47,11 +56,19 @@ const Form = () => {
             readonly={true}
             id="output"
           ></textarea>
-          <button
-            onClick={copyTextBeshy}
-            type="button"
-            class="mt-3 btn btn-primary"
-          >Copy mona beshy ko</button>
+          <div class="d-flex justify-content-between">
+            <button
+              onClick={copyTextBeshy}
+              type="button"
+              class="mt-3 btn btn-primary"
+            >Copy mona beshy ko</button>
+
+            <button
+              onClick={resetBeshy}
+              type="reset"
+              class="mt-3 btn btn-dark"
+            >Reset mo beshy ko</button>
+          </div>
         </div>
       </form>
     );
