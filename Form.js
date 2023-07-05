@@ -4,7 +4,7 @@ const Form = () => {
 
 
     const handleChangeEvent = e => {
-        const output = e.target.value.trim().replace(/\s+/g, " 🤸 ") + " 😚❤️";
+        let output = e.target.value.trim().replace(/\s+/g, " 🤸 ") + " 😚❤️";
         output = output.length <= 3 ? '' : output;
         document.querySelector('#output').value = output;
     }
